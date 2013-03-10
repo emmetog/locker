@@ -1,0 +1,16 @@
+{
+    "name": "emmetog/locker",
+    "description": "A library that allows only one process to execute at a time",
+    "license": "GPL-3.0",
+    "keywords": [ "lock", "process", "lockfile" ],
+    "authors": [
+        {
+            "name": "Emmet O'Grady",
+            "email": "emmet789@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-0": { "Emmetog\\Locker\\": "src" }
+    }
+}
