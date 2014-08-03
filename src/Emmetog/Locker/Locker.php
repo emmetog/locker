@@ -25,16 +25,13 @@ class Locker
             $lockDirectory .= DIRECTORY_SEPARATOR;
         }
 
-        if (!is_dir($lockDirectory) || !touch($lockDirectory . $lockName))
-        {
+        if (!is_dir($lockDirectory) || !touch($lockDirectory . $lockName)) {
             throw new LockerUnableToCreateLockException();
         }
 
         $this->lockHandle = fopen($lockDirectory . $lockName, 'w');
 
-
-        if (!flock($this->lockHandle, LOCK_EX | LOCK_NB))
-        {
+        if (!flock($this->lockHandle, LOCK_EX | LOCK_NB)) {
             throw new LockerAlreadyLockedException();
         }
 
@@ -59,17 +56,15 @@ class Locker
 
 class LockerException extends \Exception
 {
-    
+
 }
 
 class LockerAlreadyLockedException extends LockerException
 {
-    
+
 }
 
 class LockerUnableToCreateLockException extends LockerException
 {
-    
-}
 
-?>
+}
